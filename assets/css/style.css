@@ -871,6 +871,19 @@ img {
 .qr img{height:80px;width:80px;object-fit:contain;background:#fff;border-radius:4px;padding:6px}
 .qr a{display:block;color:#fff;font-size:12px;text-align:center;margin-top:4px;text-decoration:underline}
 .qr a i{margin-right:6px}
+
+/* Mobile footer fixes */
+@media (max-width: 767.98px){
+    .footer-link{padding-right: 0}
+    .qr-row{
+        position: static;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+    }
+    .qr img{height:64px;width:64px}
+}
 .qr a:hover{color:#f5f5f5}
 
 /*----------------------
