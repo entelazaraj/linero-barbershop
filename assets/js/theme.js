@@ -30,6 +30,26 @@ $(function() {
   // Keep navbar light (solid) at all times
   $("#mainNav").addClass("navbar-light");
 
+  // Reveal on scroll for elements with .reveal-on-scroll
+  var revealItems = document.querySelectorAll('.reveal-on-scroll');
+  if (revealItems.length) {
+    revealItems.forEach(function(el){
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.15});
+    revealItems.forEach(function(el){ io.observe(el); });
+  }
+
  
 
 })(jQuery); // End of use strict

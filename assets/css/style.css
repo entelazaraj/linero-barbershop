@@ -596,7 +596,9 @@ img {
     border-radius: 6px;
     -webkit-box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     box-shadow:  0 10px 24px rgba(0,0,0,0.18);
+    transition: transform .3s ease;
 }
+.portfolio-block:hover img{ transform: scale(1.02) }
 
 
 .portfolio-content{
@@ -872,17 +874,31 @@ img {
 .qr a{display:block;color:#fff;font-size:12px;text-align:center;margin-top:4px;text-decoration:underline}
 .qr a i{margin-right:6px}
 
+/* Carousel sizing */
+.carousel-img{max-height:700px; object-fit:cover}
+@media (max-width:767.98px){
+  .carousel-img{max-height:420px}
+}
+
 /* Mobile footer fixes */
 @media (max-width: 767.98px){
     .footer-link{padding-right: 0}
     .qr-row{
         position: static;
         justify-content: center;
-        gap: 24px;
+        gap: 16px;
         flex-wrap: wrap;
         margin-top: 12px;
     }
-    .qr img{height:64px;width:64px}
+    .qr img{height:56px;width:56px}
+    /* Keep contact items on a single line and reduce size */
+    .footer-link li{display:flex; align-items:center; gap:8px; flex-wrap:nowrap}
+    .footer-link a, .footer-link span{font-size:14px !important; white-space:nowrap}
+}
+
+@media (max-width: 375px){
+    .qr img{height:48px;width:48px}
+    .footer-link a, .footer-link span{font-size:13px !important}
 }
 .qr a:hover{color:#f5f5f5}
 

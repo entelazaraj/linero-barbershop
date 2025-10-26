@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Preferred host
+Host: www.linerobarbershop.se
+
+# Sitemap URL
+Sitemap: http://www.linerobarbershop.se/sitemap.xml
