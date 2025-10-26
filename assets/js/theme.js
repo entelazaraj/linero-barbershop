@@ -50,6 +50,36 @@ $(function() {
     revealItems.forEach(function(el){ io.observe(el); });
   }
 
+  // Build slideshow from a folder list (static list for now)
+  // Add filenames inside this array; just drop new files and add names
+  var slideshowImages = [
+    'assets/img/portfolio/klient_klippning.png',
+    'assets/img/portfolio/klient_skägg.png',
+    'assets/img/portfolio/rakning.png',
+    'assets/img/portfolio/klient_barn.png'
+  ];
+  var carousel = document.getElementById('barberCarousel');
+  if (carousel && slideshowImages.length){
+    var indicators = carousel.querySelector('.carousel-indicators');
+    var inner = carousel.querySelector('.carousel-inner');
+    slideshowImages.forEach(function(src, idx){
+      var li = document.createElement('li');
+      li.setAttribute('data-target', '#barberCarousel');
+      li.setAttribute('data-slide-to', String(idx));
+      if(idx===0) li.className = 'active';
+      indicators.appendChild(li);
+
+      var item = document.createElement('div');
+      item.className = 'carousel-item' + (idx===0 ? ' active' : '');
+      var img = document.createElement('img');
+      img.className = 'd-block w-100 carousel-img';
+      img.alt = 'Slideshow image ' + (idx+1);
+      img.src = src;
+      item.appendChild(img);
+      inner.appendChild(item);
+    });
+  }
+
  
 
 })(jQuery); // End of use strict
