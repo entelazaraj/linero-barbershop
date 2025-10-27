@@ -323,7 +323,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div class="carousel-progress"><div class="bar"></div></div>
+                    <div class="carousel-segments"></div>
                 </div>
             </div>
         </div>
@@ -440,19 +440,29 @@
 
     <script>
     (function(){
-      var c = $('#barberCarousel');
-      if(!c.length) return;
-      var interval = +c.data('interval') || 4000;
-      function animateBar(){
-        var bar = $('.carousel-progress .bar').get(0); if(!bar) return;
-        bar.style.transition='none'; bar.style.width='0';
-        requestAnimationFrame(function(){ requestAnimationFrame(function(){
-          bar.style.transition = 'width '+(interval/1000)+'s linear';
-          bar.style.width='100%';
+      var $c = $('#barberCarousel'); if(!$c.length) return;
+      var interval = +$c.data('interval') || 2500;
+      function buildSegments(){
+        var $segs = $('.carousel-segments');
+        $segs.empty();
+        var count = $c.find('.carousel-item').length;
+        for(var i=0;i<count;i++){
+          $segs.append('<div class="seg"><i></i></div>');
+        }
+      }
+      function runSeg(idx){
+        var bars = document.querySelectorAll('.carousel-segments .seg i');
+        if(!bars.length) return;
+        for(var j=0;j<bars.length;j++){ bars[j].style.transition='none'; bars[j].style.width='0'; }
+        var active = bars[idx]; if(!active) return;
+        requestAnimationFrame(function(){requestAnimationFrame(function(){
+          active.style.transition='width '+(interval/1000)+'s linear';
+          active.style.width='100%';
         });});
       }
-      c.on('slide.bs.carousel', animateBar);
-      animateBar();
+      buildSegments();
+      runSeg($c.find('.carousel-item.active').index());
+      $c.on('slide.bs.carousel', function(e){ runSeg($(e.relatedTarget).index()); });
     })();
     </script>
 
