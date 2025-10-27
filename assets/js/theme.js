@@ -54,9 +54,27 @@ $(function() {
   // Add filenames inside this array; just drop new files and add names
   var slideshowImages = [
     'assets/img/portfolio/klient_klippning.png',
-    'assets/img/portfolio/klient_skägg.png',
-    'assets/img/portfolio/rakning.png',
-    'assets/img/portfolio/klient_barn.png'
+    'assets/img/portfolio/klient_barn.png',
+    'assets/img/portfolio/IMG_51211.JPG',
+    'assets/img/portfolio/E1C252DF-1.JPG',
+    'assets/img/portfolio/IMG_51261.JPG',
+    'assets/img/portfolio/IMG_51091.JPG',
+    'assets/img/portfolio/IMG_51291.JPG',
+    'assets/img/portfolio/F62BCFCF-1.JPG',
+    'assets/img/portfolio/IMG_50901.JPG',
+    'assets/img/portfolio/A69958A7-1.JPG',
+    'assets/img/portfolio/B9CE75D9-1.JPG',
+    'assets/img/portfolio/IMG_49611.JPG',
+    'assets/img/portfolio/IMG_49621.JPG',
+    'assets/img/portfolio/IMG_49911.JPG',
+    'assets/img/portfolio/IMG_49941.JPG',
+    'assets/img/portfolio/IMG_49801.JPG',
+    'assets/img/portfolio/IMG_48421.JPG',
+    'assets/img/portfolio/IMG_48411.JPG',
+    'assets/img/portfolio/IMG_49781 2.JPG',
+    'assets/img/portfolio/IMG_49781.JPG',
+    'assets/img/portfolio/IMG_50241.JPG',
+    'assets/img/portfolio/klient_skägg.png'
   ];
   var carousel = document.getElementById('barberCarousel');
   if (carousel && slideshowImages.length){
