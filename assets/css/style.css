@@ -889,9 +889,10 @@ img {
 #barberCarousel .carousel-caption{ opacity:0; transform: translateY(12px); transition: all .5s ease; }
 #barberCarousel .carousel-item.active .carousel-caption{ opacity:1; transform: translateY(0); }
 
-/* Progress bar */
-.carousel-progress{height:4px;background:rgba(255,255,255,.25);margin-top:8px;overflow:hidden;border-radius:2px}
-.carousel-progress .bar{height:100%;width:0;background:#198754;transition:width linear}
+/* Segmented progress */
+.carousel-segments{display:flex;gap:6px;margin-top:8px}
+.carousel-segments .seg{flex:1;height:4px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden}
+.carousel-segments .seg>i{display:block;height:100%;width:0;background:#198754;transition:width linear}
 
 /* Mobile footer fixes */
 @media (max-width: 767.98px){
